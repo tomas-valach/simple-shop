@@ -1,8 +1,6 @@
 package com.valach.simpleshop.service.pojo;
 
-import com.valach.simpleshop.model.Order;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class OrderPojo {
 
@@ -14,14 +12,5 @@ public class OrderPojo {
 
   public void setItems(List<OrderItemPojo> items) {
     this.items = items;
-  }
-
-  public static OrderPojo mapOrder(Order order) {
-    OrderPojo pojo = new OrderPojo();
-    pojo.setItems(order.getOrderItems().stream()
-        .map(OrderItemPojo::mapOrderItem)
-        .collect(Collectors.toList()));
-
-    return pojo;
   }
 }

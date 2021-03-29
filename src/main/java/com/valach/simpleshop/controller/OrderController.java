@@ -4,6 +4,7 @@ import com.valach.simpleshop.service.CancelOrderService;
 import com.valach.simpleshop.service.OrderService;
 import com.valach.simpleshop.service.impl.OrderServiceImpl;
 import com.valach.simpleshop.service.pojo.OrderPojo;
+import com.valach.simpleshop.service.pojo.OrderPojoGet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,8 +34,8 @@ public class OrderController {
   }
 
   @GetMapping("/{id}")
-  public ResponseEntity<OrderPojo> getOrder(@PathVariable Long id) {
-    OrderPojo orders = orderService.getOrder(id);
+  public ResponseEntity<OrderPojoGet> getOrder(@PathVariable Long id) {
+    OrderPojoGet orders = orderService.getOrder(id);
     return ResponseEntity.ok(orders);
   }
 
