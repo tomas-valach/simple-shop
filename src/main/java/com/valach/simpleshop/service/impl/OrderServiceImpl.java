@@ -17,6 +17,7 @@ import com.valach.simpleshop.service.OrderService;
 import com.valach.simpleshop.service.exception.ShopRuntimeException;
 import com.valach.simpleshop.service.pojo.OrderItemPojo;
 import com.valach.simpleshop.service.pojo.OrderPojo;
+import com.valach.simpleshop.service.pojo.OrderPojoGet;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -138,9 +139,9 @@ public class OrderServiceImpl implements OrderService {
   }
 
   @Transactional(readOnly = true)
-  public OrderPojo getOrder(Long id) {
+  public OrderPojoGet getOrder(Long id) {
     Order order = orderDao.load(id);
-    return OrderPojo.mapOrder(order);
+    return OrderPojoGet.mapOrder(order);
   }
 
 }

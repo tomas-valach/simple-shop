@@ -1,6 +1,7 @@
 package com.valach.simpleshop.service;
 
 import com.valach.simpleshop.service.pojo.OrderPojo;
+import com.valach.simpleshop.service.pojo.OrderPojoGet;
 
 public interface OrderService {
 
@@ -8,5 +9,5 @@ public interface OrderService {
 
   void payOrder(Long id);
 
-  OrderPojo getOrder(Long id);
+  OrderPojoGet getOrder(Long id);
 }
